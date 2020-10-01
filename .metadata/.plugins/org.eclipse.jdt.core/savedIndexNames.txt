@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\pgbng\OneDrive - Seneca\SENECA MASTER\Fall 2020\JAC444\.metadata\.plugins\org.eclipse.jdt.core
+991174305.index
+2873614797.index
+2719829787.index
+3183326800.index
+2872044937.index

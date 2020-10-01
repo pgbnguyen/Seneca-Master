@@ -1,0 +1,26 @@
+
+public class task2 {
+ public static void main(String[] args) {
+	 while (true) {
+		    int dice1=(int)(Math.random()*6+1);
+		    int dice2=(int)(Math.random()*6+1);
+		    int sum = dice1 + dice2;
+
+		    System.out.format("Roll: total  %d + %d = %d %n", dice1, dice2, sum); 
+
+		 
+			if (sum==2 || sum==3 || sum==12) {
+		        System.out.println("Craps, Better Luck Next Time, You Lose %n");
+		        break;
+		    } else if(sum==7 || sum==11 || sum==temp) { 
+		        System.out.println("Woah!!! With a " + sum + " You WIN!!!!!!!");
+		        break; 
+		    }else {
+		    	int temp = sum;
+		    	System.out.format("Point is (established) set to %d%n", temp);
+		    }
+
+		    // If you wanted, you could wait here for the user to confirm (e.g. with a key press)
+		}
+ }
+}

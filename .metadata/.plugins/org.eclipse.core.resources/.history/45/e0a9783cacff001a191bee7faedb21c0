@@ -1,0 +1,44 @@
+package week1NCC;
+
+import java.util.Scanner;
+
+public class MaxLocation {
+    double max;
+    int row;
+    int col;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows and columns in the array: ");
+        int rows = in.nextInt();
+        int columns = in.nextInt();
+        double[][] userArray = new double[rows][columns];
+        System.out.println("Enter the array:");
+        for (int i = 0; i < userArray.length; i++) {
+            for (int j = 0; j < userArray[i].length; j++) {
+                userArray[i][j] = in.nextDouble();
+            }
+        }
+        in.close();
+        MaxLocation MaxLocate = new MaxLocation();
+        
+        MaxLocate.MaxValue(userArray);
+        System.out.format("The location of the largest element is %.2f at (%d,%d)", MaxLocate.max, MaxLocate.row, MaxLocate.col);
+    }
+    public  double MaxValue(double[][] a) {
+        
+        double largest = a[0][0];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                if (largest < a[i][j]) {
+                    max = a[i][j];
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+        return max;
+    }
+   
+	
+}

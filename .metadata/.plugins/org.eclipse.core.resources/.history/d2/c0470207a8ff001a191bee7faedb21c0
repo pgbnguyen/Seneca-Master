@@ -1,0 +1,54 @@
+package week1NCC;
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class MaxLocation {
+    double max;
+    int row;
+    int col;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows and columns in the array: ");
+        int rows = in.nextInt();
+        int columns = in.nextInt();
+        double[][] userArray = new double[rows][columns];
+        System.out.println("Enter the array:");
+        for (int i = 0; i < userArray.length; i++) {
+            for (int j = 0; j < userArray[i].length; j++) {
+                userArray[i][j] = in.nextDouble();
+            }
+        }
+        MaxLocation MaxLocate = new MaxLocation();
+        int maxVal = (int)MaxLocate.MaxValue(userArray);
+        MaxLocate.locateLargest(userArray);
+        System.out.print("The location of the largest element is %d at (%d,%d)", maxVal, MaxLocate.row, MaxLocate.col);
+    }
+    
+    public  void locateLargest(double[][] a) {
+      
+        double temp = a[0][0];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                if (temp < a[i][j]) {                   
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+     
+    }
+    public  double MaxValue(double[][] a) {
+       
+        double largest = a[0][0];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                if (largest < a[i][j]) {
+                    max = a[i][j];
+                }
+            }
+        }
+        return max;
+    }
+	
+}

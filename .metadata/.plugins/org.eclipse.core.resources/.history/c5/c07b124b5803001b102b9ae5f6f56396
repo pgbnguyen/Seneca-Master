@@ -1,0 +1,41 @@
+import java.util.*;
+public class task1 {
+	double max;
+	int row;
+	int col;
+	
+	 public static void main(String[] args) {
+		  Scanner in = new Scanner(System.in);
+
+	        System.out.print("Enter the number of rows and columns in the array: ");
+	        int rows = in.nextInt();
+	        int columns = in.nextInt();
+	        double[][] userArray = new double[rows][columns];
+	        System.out.println("Enter the array:");
+	        for (int i = 0; i < userArray.length; i++) {
+	            for (int j = 0; j < userArray[i].length; j++) {
+	                userArray[i][j] = in.nextDouble();
+	            }
+	        }
+	        in.close();
+	        task1 t = new task1();
+	        t.findMax(userArray);
+	        System.out.format("The location of the largest element is %.2f at (%d, %d)", t.max, t.row, t.col);
+	 }
+	 
+	 public double findMax(double[][] arr) {
+		 max = arr[0][0];
+		 for(int i=0; i < arr.length; i++) {
+			 for(int j=0; j < arr.length; j++) {
+				 if(max < arr[i][j]) {
+					 max =arr[i][j];
+					 row = i;
+					 col = j;
+				 }
+			 }
+		 }
+		 return max;
+	 }
+	 
+
+}
